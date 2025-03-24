@@ -23,6 +23,8 @@ namespace AssoftaApi
             builder.Services.AddScoped<AntragService>();
             builder.Services.AddScoped<SchadensmeldungService>();
             builder.Services.AddScoped<BenutzerService>();
+            builder.Services.AddScoped<PoliceService>();
+
 
             var app = builder.Build();
 
