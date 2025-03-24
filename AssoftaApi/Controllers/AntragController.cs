@@ -16,6 +16,20 @@ public class AntragController(ILogger<AntragController> logger, AntragService se
         return Ok();
     }
 
+    [HttpPost(nameof(Accept))]
+    public async Task<IActionResult> Accept(string id)
+    {
+        await service.AcceptAntrag(id);
+        return Ok();
+    }
+
+    [HttpPost(nameof(Decline))]
+    public async Task<IActionResult> Decline(string id)
+    {
+        await service.DeclineAntrag(id);
+        return Ok();
+    }
+
     [HttpPut(nameof(Put))]
     public async Task<IActionResult> Put(Antrag antrag)
     {

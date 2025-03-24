@@ -24,6 +24,10 @@ namespace AssoftaApi
             builder.Services.AddScoped<SchadensmeldungService>();
             builder.Services.AddScoped<BenutzerService>();
             builder.Services.AddScoped<PoliceService>();
+            builder.Services.AddScoped<FakturaService>();
+            builder.Services.AddScoped<CRMService>();
+            builder.Services.AddScoped<SchadensregulierungService>();
+
 
 
             var app = builder.Build();

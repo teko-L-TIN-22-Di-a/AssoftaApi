@@ -19,6 +19,35 @@ public class AntragService(AssoftaDbContext context)
         await context.SaveChangesAsync();
     }
 
+    public async Task AcceptAntrag(string id)
+    {
+        try
+        {
+            context.AntragSet.First(x => x.Id == id).Accept();
+
+            await context.SaveChangesAsync();
+        }
+        catch (Exception)
+        {
+            throw new Exception("Id nicht gefunden.");
+        }
+    }
+
+    public async Task DeclineAntrag(string id)
+    {
+        try
+        {
+            context.AntragSet.First(x => x.Id == id).Decline();
+
+            await context.SaveChangesAsync();
+        }
+        catch (Exception)
+        {
+            throw new Exception("Id nicht gefunden.");
+        }
+    }
+
+
     public async Task<List<Antrag>> GetAll()
     {
         return await context.AntragSet.ToListAsync();

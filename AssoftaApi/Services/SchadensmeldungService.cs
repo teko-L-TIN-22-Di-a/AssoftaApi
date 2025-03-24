@@ -19,6 +19,13 @@ public class SchadensmeldungService(AssoftaDbContext context)
         await context.SaveChangesAsync();
     }
 
+    public async Task<string> SchadensmeldungPruefen(string meldungId)
+    {
+        Random rand = new Random();
+        return rand.Next(2) == 0 ? "Erlaubt" : "Abgelehnt";
+    }
+
+
     public async Task<double> CalculateEntschaedigung(string meldungId)
     {
         var meldung = await context.SchadensmeldungsSet.FindAsync(meldungId);

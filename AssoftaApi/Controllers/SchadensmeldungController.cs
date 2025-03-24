@@ -26,6 +26,12 @@ public class SchadensmeldungController(
     }
 
 
+    [HttpGet(nameof(Pruefen))]
+    public async Task<string> Pruefen(string meldungId)
+    {
+        return await service.SchadensmeldungPruefen(meldungId);
+    }
+
     [HttpGet(nameof(GetEntschaedigung))]
     public async Task<double> GetEntschaedigung(string meldungId)
     {
