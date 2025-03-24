@@ -7,7 +7,7 @@ namespace AssoftaApi.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class SharedService(ILogger<SharedService> logger, FakturaService fakturaService, CRMService crmService, SchadensregulierungService damageService) : ControllerBase
+public class SharedController(ILogger<SharedController> logger, FakturaService fakturaService, CRMService crmService, SchadensregulierungService damageService) : ControllerBase
 {
     [HttpGet(nameof(StartBankabrechnung))]
     public async Task<string> StartBankabrechnung()
